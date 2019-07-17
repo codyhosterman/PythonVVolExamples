@@ -2,11 +2,9 @@ import hashlib
 import uuid
 arrayID = raw_input("Please enter a FlashArray ID: ") 
 def scid_uuid(farrayID):
-   m = hashlib.md5()
-   m.update(farrayID)
+   m = hashlib.md5().update(farrayID)
    b = m.digest()
-   m = hashlib.md5()
-   m.update(b)
+   m = hashlib.md5().update(b)
    b = bytearray(m.digest())
    b[6] &= 0x0f 
    b[6] |= 0x30 
